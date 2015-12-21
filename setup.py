@@ -16,6 +16,12 @@ from setuptools import find_packages
 from setuptools import setup
 from setuptools.command.build_ext import build_ext
 from setuptools import Extension
+try:
+    # Allow installing package without any Cython available. This
+    # assumes you are going to include the .c files in your sdist.
+    import Cython
+except ImportError:
+    Cython = None
 
 
 def read(*names, **kwargs):
@@ -102,6 +108,9 @@ setup(
         #   'rst': ['docutils>=0.11'],
         #   ':python_version=="2.6"': ['argparse'],
     },
+    setup_requires=[
+        'cython',
+    ] if Cython else [],
     entry_points={
         'console_scripts': [
             'nameless = nameless.cli:main',
@@ -115,6 +124,6 @@ setup(
             include_dirs=[dirname(path)]
         )
         for root, _, _ in os.walk('src')
-        for path in glob(join(root, '*.c'))
+        for path in glob(join(root, '*.pyx' if Cython else '*.c'))
     ],
 )
