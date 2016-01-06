@@ -3,13 +3,11 @@
 from __future__ import absolute_import, print_function
 
 import io
-import os
 import re
 from glob import glob
 from os.path import basename
 from os.path import dirname
 from os.path import join
-from os.path import relpath
 from os.path import splitext
 
 from setuptools import find_packages
@@ -27,9 +25,9 @@ setup(
     name='nameless',
     version='0.1.0',
     license='BSD',
-    description='An example package. Replace this with a proper project description. Generated with https://github.com/ionelmc/cookiecutter-pylibrary',
+    description='An example package. Generated with https://github.com/ionelmc/cookiecutter-pylibrary',
     long_description='%s\n%s' % (
-        re.compile('^.. start-badges.*^.. end-badges', re.M|re.S).sub('', read('README.rst')),
+        re.compile('^.. start-badges.*^.. end-badges', re.M | re.S).sub('', read('README.rst')),
         re.sub(':[a-z]+:`~?(.*?)`', r'``\1``', read('CHANGELOG.rst'))
     ),
     author='Ionel Cristian Mărieș',
@@ -49,7 +47,6 @@ setup(
         'Operating System :: POSIX',
         'Operating System :: Microsoft :: Windows',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.3',
