@@ -1,11 +1,9 @@
 [paths]
-source =
-   src/nameless
-   */site-packages/nameless
+source = src
 
 [run]
 branch = True
-source = nameless
+source = src
 parallel = true
 
 [report]
