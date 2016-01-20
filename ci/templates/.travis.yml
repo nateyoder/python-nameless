@@ -9,9 +9,8 @@ env:
     - TOXENV=check
     - TOXENV=docs
 {% for env in tox_environments %}{{ '' }}
-    - TOXENV={{ env }}
-      {%- if 'cover' in env %},extension-coveralls,coveralls,codecov{% endif -%}
-{%- endfor %}
+    - TOXENV={{ env }}{% if 'cover' in env %},extension-coveralls,coveralls,codecov{% endif -%}
+{% endfor %}
 
 before_install:
   - python --version
