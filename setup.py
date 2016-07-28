@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
 
 import io
 import os
@@ -12,10 +13,11 @@ from os.path import join
 from os.path import relpath
 from os.path import splitext
 
+from setuptools import Extension
 from setuptools import find_packages
 from setuptools import setup
 from setuptools.command.build_ext import build_ext
-from setuptools import Extension
+
 try:
     # Allow installing package without any Cython available. This
     # assumes you are going to include the .c files in your sdist.
