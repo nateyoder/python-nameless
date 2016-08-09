@@ -9,7 +9,7 @@ env:
     - TOXENV=check
     - TOXENV=docs
 
-    - TOXENV=py27,coveralls,codecov
+    - TOXENV=py27,codecov,coveralls
 
     - TOXENV=py33,coveralls,codecov
 
